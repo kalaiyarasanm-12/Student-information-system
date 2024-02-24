@@ -1,0 +1,256 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form action="/students/<%= student._id %>?_method=PUT " method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <div class="card">
+                        <h3 class="card-header text-center mb-4">Edit Student</h3>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <label for="name" class="col-sm-3 col-form-label">Student Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="name" name="student[name]"
+                                        value="<%= student.name %> " required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="batchno" class="col-sm-3 col-form-label">Batch Number</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="batchno" name="student[batchno]"
+                                        value="<%= student.batchno %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="username" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="username" name="student[username]"
+                                        value="<%= student.username %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="department" class="col-sm-3 col-form-label">Department</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="student[department]" id="department" required>
+                                        <option value="<%= student.department %>" selected>
+                                            <%= student.department %>
+                                        </option>
+                                        <option disabled>Choose</option>
+                                        <option value="Civil Engineering">Civil Engineering</option>
+                                        <option value="Computer Science and Engineering">Computer Science and
+                                            Engineering</option>
+                                        <option value="Electronics and Communication Engineering">Electronics and
+                                            Communication
+                                            Engineering</option>
+                                        <option value="Electrical and Electronics Engineering">Electrical and
+                                            Electronics
+                                            Engineering
+                                        </option>
+                                        <option value="Information Technology">Information Technology</option>
+                                        <option value="Instrumentation and Controls Engineering">Instrumentation and
+                                            Controls
+                                            Engineering</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="address" class="col-sm-3 col-form-label">Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="student[address]" id="address"
+                                        value="<%= student.address %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="dob" class="col-sm-3 col-form-label">Date of Birth</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="student[dob]" id="dob"
+                                        value="<%= student.dob.toISOString().slice(0, 10) %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="student[gender]" id="gender" required>
+                                        <option value="<%= student.gender %>" selected>
+                                            <%= student.gender %>
+                                        </option>
+                                        <option disabled value="">Choose</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="TransGender">TransGender</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="admissionNumber" class="col-sm-3 col-form-label">Admission Number</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="student[admissionNumber]"
+                                        id="admissionNumber" value="<%= student.admissionNumber %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="mobileNumber" class="col-sm-3 col-form-label">Mobile Number</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="student[mobileNumber]"
+                                        id="mobileNumber" value="<%= student.mobileNumber %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="attendance" class="col-sm-3 col-form-label">Attendance</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="student[attendance]" id="attendance"
+                                        value="<%= student.attendance %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="eventName" class="col-sm-3 col-form-label">Event Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="student[eventName]" id="eventName"
+                                        value="<%= student.eventName %>" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="eventDate" class="col-sm-3 col-form-label">Event Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="student[eventDate]" id="eventDate"
+                                        value="<%- student.eventDate.toISOString().slice(0, 10) %>" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header text-center">Mark</div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="subject1" class="col-sm-3 col-form-label">Subject Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="student[subject1]" id="subject1"
+                                    value="<%= student.subject1 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mark1" class="col-sm-3 col-form-label">Mark</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="student[mark1]" id="mark1"
+                                    value="<%= student.mark1 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="subject2" class="col-sm-3 col-form-label">Subject Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="student[subject2]" id="subject2"
+                                    value="<%= student.subject2 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mark2" class="col-sm-3 col-form-label">Mark</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="student[mark2]" id="mark2"
+                                    value="<%= student.mark2 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="subject3" class="col-sm-3 col-form-label">Subject Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="student[subject3]" id="subject3"
+                                    value="<%= student.subject3 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mark3" class="col-sm-3 col-form-label">Mark</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="student[mark3]" id="mark3"
+                                    value="<%= student.mark3 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="subject4" class="col-sm-3 col-form-label">Subject Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="student[subject4]" id="subject4"
+                                    value="<%= student.subject4 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mark4" class="col-sm-3 col-form-label">Mark</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="student[mark4]" id="mark4"
+                                    value="<%= student.mark4 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="subject5" class="col-sm-3 col-form-label">Subject Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="student[subject5]" id="subject5"
+                                    value="<%= student.subject5 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mark5" class="col-sm-3 col-form-label">Mark</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="student[mark5]" id="mark5"
+                                    value="<%= student.mark5 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="subject6" class="col-sm-3 col-form-label">Subject Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="student[subject6]" id="subject6"
+                                    value="<%= student.subject6 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mark6" class="col-sm-3 col-form-label">Mark</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="student[mark6]" id="mark6"
+                                    value="<%= student.mark6 %>" required>
+                                <div class="valid-feedback">
+                                    Looks Good!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3 mt-4">
+                    <p><button class="btn btn-primary btn-block">Update Student</button></p>
+                    <p><a class="btn btn-dark btn-block" href="/students/<%= student._id %> ">Back to
+                            Profile</a></p>
+                </div>
+            </form>
+        </div>
+    </div>

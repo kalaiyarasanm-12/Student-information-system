@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate') %>
+    <h2 class="text-center">All Students</h2>
+    <div class="col-8 offset-2">
+        <div class="mb-4">
+            <div class="mt-4">
+                <a class="btn btn-primary btn-block" href="/students/new">Add Student</a>
+            </div>
+        </div>
+        <% for (let student of students){%>
+            <div class="card text-center mb-2">
+                <div class="col">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= student.batchno%>
+                                <%= student.name %>
+                        </h4>
+                        <a class="btn w-25 mb-2 mt-2 btn-primary btn-sm btn-" href="/students/<%= student._id %> ">Open
+                            Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }%>
+    </div>

@@ -1,0 +1,239 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card mb-3">
+                <h3 class="card-header text-center mb-4">Student Profile</h3>
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <label for="name" class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="name" readonly>
+                                <%= student.name %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="batchno" class="col-sm-3 col-form-label">Batch Number</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="batchno" readonly>
+                                <%= student.batchno %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="department" class="col-sm-3 col-form-label">Department</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="department" readonly>
+                                <%= student.department %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="address" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="address" readonly>
+                                <%= student.address %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="dob" class="col-sm-3 col-form-label">Date of Birth</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="dob" readonly>
+                                <%= student.dob.toISOString().slice(0, 10) %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="gender" readonly>
+                                <%= student.gender %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="department" class="col-sm-3 col-form-label">Admission Number</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="admissionNumber" readonly>
+                                <%= student.admissionNumber %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="mobileNumber" class="col-sm-3 col-form-label">Mobile Number</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="mobileNumber" readonly>
+                                <%= student.mobileNumber %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="attendance" class="col-sm-3 col-form-label">Attendance</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="attendance" readonly>
+                                <%= student.attendance %>%
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="eventName" class="col-sm-3 col-form-label">Event Name</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="eventName" readonly>
+                                <%= student.eventName %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="eventDate" class="col-sm-3 col-form-label">Event Date</label>
+                        <div class="col-sm-9">
+                            <h1 class="form-control" id="eventDate" readonly>
+                                <%= student.eventDate.toISOString().slice(0, 10) %>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    <label for="mark" class="col-sm-3 col-form-label">Mark</label>
+                </div>
+                <div class="card-body">
+                    <!-- <div class="row mb-2">
+                        <label for="subject1" class="col-sm-5 col-form-label">
+                            <%= student.subject1 %>
+                        </label>
+                        <div class="col-sm-7">
+                            <h1 class="form-control" id="subject1" readonly>
+                                <%= student.mark1 %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="subject2" class="col-sm-5 col-form-label">
+                            <%= student.subject2 %>
+                        </label>
+                        <div class="col-sm-7">
+                            <h1 class="form-control" id="subject1" readonly>
+                                <%= student.mark2 %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="subject3" class="col-sm-5 col-form-label">
+                            <%= student.subject3 %>
+                        </label>
+                        <div class="col-sm-7">
+                            <h1 class="form-control" id="subject3" readonly>
+                                <%= student.mark3 %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="subject4" class="col-sm-5 col-form-label">
+                            <%= student.subject4 %>
+                        </label>
+                        <div class="col-sm-7">
+                            <h1 class="form-control" id="subject4" readonly>
+                                <%= student.mark4 %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="subject5" class="col-sm-5 col-form-label">
+                            <%= student.subject5 %>
+                        </label>
+                        <div class="col-sm-7">
+                            <h1 class="form-control" id="subject5" readonly>
+                                <%= student.mark5 %>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="subject6" class="col-sm-5 col-form-label">
+                            <%= student.subject6 %>
+                        </label>
+                        <div class="col-sm-7">
+                            <h1 class="form-control" id="subject6" readonly>
+                                <%= student.mark6 %>
+                            </h1>
+                        </div>
+                    </div> -->
+                    <div class="row mb-2">
+                    <table class="border-collapse mr-2" style="border:1px solid black; ">
+                        <tr style="border:1px solid black">
+                           <th style="border:1px solid black">Subjects</th> 
+                           <th style="border:1px solid black">IA1</th>
+                           <th style="border:1px solid black">IA2</th>
+                           <th style="border:1px solid black">TA3</th>
+                            <th style="border:1px solid black">University</th>
+                        </tr>
+                        <tr style="border:1px solid black">
+                            <td style="border:1px solid black">Subject 1</td>
+                            <td style="border:1px solid black"><%= student.mark1 %></td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                        </tr>
+                        <tr style="border:1px solid black">
+                            <td style="border:1px solid black">Subject 2</td>
+                            <td style="border:1px solid black">
+                                <%= student.mark2 %>
+                            </td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                        </tr>
+                        <tr style="border:1px solid black">
+                            <td style="border:1px solid black">Subject 3</td>
+                            <td style="border:1px solid black">
+                                <%= student.mark3 %>
+                            </td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                        </tr>
+                        <tr style="border:1px solid black">
+                            <td style="border:1px solid black">Subject 4</td>
+                            <td style="border:1px solid black">
+                                <%= student.mark4 %>
+                            </td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                        </tr>
+                        <tr style="border:1px solid black">
+                            <td style="border:1px solid black">Subject 5</td>
+                            <td style="border:1px solid black">
+                                <%= student.mark5 %>
+                            </td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                        </tr>
+                        <tr style="border:1px solid black">
+                            <td style="border:1px solid black">Subject 6</td>
+                            <td style="border:1px solid black">
+                                <%= student.mark6 %>
+                            </td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                            <td style="border:1px solid black">-</td>
+                        </tr>
+                        
+                        </table>
+                        </div>
+                </div>
+            </div>
+            <div class="row mb-2 mt-4">
+                <p class="mb-1"><a class="btn btn-primary btn-block" href="/students/<%=student._id%>/edit">Edit</a></p>
+                <p class="mb-1">
+                <form action="/students/<%=student._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger btn-block">Delete</button>
+                </form>
+                </p>
+                <p><a class="btn btn-dark btn-block" href="/students">All Students</a>
+                </p>
+            </div>
+        </div>
+    </div>
